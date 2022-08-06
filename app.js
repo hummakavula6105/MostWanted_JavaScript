@@ -209,13 +209,21 @@ function chars(input) {
 //     return foundFamily;
 // }
 
-function findPersonFamily(array){
-    let spouseName = promptFor("Whose spouse are you searching for?", chars);
+function findPersonFamily(data.array, (function(foundPerson){
     let foundSpouse = array.filter(function(_spouse) {
         if (_spouse.includes(spouseName)) {
             return true;
         }
     return foundSpouse;
-    };
-
+     });
+}
 console.log(findPersonFamily(foundSpouse));
+
+function findPersonFamily2(person){
+    let spouseID = person.currentSpouse
+    let parents = person.parents
+    let spouseName = null
+        if spouseID === null{
+            print("No spouse found") // Need to figure out what to use rather than print 
+        }
+}
