@@ -194,3 +194,28 @@ function chars(input) {
 //////////////////////////////////////////* End Of Starter Code *//////////////////////////////////////////
 // Any additional functions can be written below this line 👇. Happy Coding! 😁
 
+
+// function findPersonFamily(person) {
+//     let personFamily = `Parents: ${person.parents}\n`;
+//     personFamily+= `Current Spouse: ${person.currentSpouse}\n`;
+
+//     alert(personFamily);
+
+//     let foundFamily = people.filter(function (family) {
+//         if (person.parents === parents && person.currentSpouse === currentSpouse) {
+//             return true;
+//         }
+//     });
+//     return foundFamily;
+// }
+
+function findPersonFamily(array){
+    let spouseName = promptFor("Whose spouse are you searching for?", chars);
+    let foundSpouse = array.filter(function(_spouse) {
+        if (_spouse.includes(spouseName)) {
+            return true;
+        }
+    return foundSpouse;
+    };
+
+console.log(findPersonFamily(foundSpouse));
