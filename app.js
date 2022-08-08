@@ -195,35 +195,74 @@ function chars(input) {
 // Any additional functions can be written below this line 👇. Happy Coding! 😁
 
 
-// function findPersonFamily(person) {
-//     let personFamily = `Parents: ${person.parents}\n`;
-//     personFamily+= `Current Spouse: ${person.currentSpouse}\n`;
+function searchByID(id, people) {
 
-//     alert(personFamily);
-
-//     let foundFamily = people.filter(function (family) {
-//         if (person.parents === parents && person.currentSpouse === currentSpouse) {
-//             return true;
-//         }
-//     });
-//     return foundFamily;
-// }
-
-function findPersonFamily(data.array, (function(foundPerson){
-    let foundSpouse = array.filter(function(_spouse) {
-        if (_spouse.includes(spouseName)) {
-            return true;
-        }
-    return foundSpouse;
-     });
+    return people.find(function (value) {
+        return value.id === id; 
+    })
 }
-console.log(findPersonFamily(foundSpouse));
 
-function findPersonFamily2(person){
-    let spouseID = person.currentSpouse
-    let parents = person.parents
-    let spouseName = null
-        if spouseID === null{
-            print("No spouse found") // Need to figure out what to use rather than print 
+function findPersonFamily(person, people) {
+    let spouseName = searchByID(person.currentSpouse, people)
+    if (spouseName === undefined) {
+        spouseName = "None Found"
+    }
+    else {spouseName = spouseName.firstName + " " +spouseName.lastName}
+    
+    let parents = []
+    if (person.parents.length > 0) {
+        for (let id of person.parents) {
+            parents.push(searchByID(id, people))
         }
+    }
+    let parentNames = "";
+    
+
+    // if (parents.length > 0) {
+
+    // }
+    
+    if (parents.length === 0) {
+        parentNames = "None Found"
+    } else {
+        for (let parent of parents){
+            parentNames +=  "\n" + parent.firstName + " " + parent.lastName
+        }
+    }
+    
+    
+    let siblings = [];
+    let siblingNames = "";
+
+    if (parents.length > 0) {
+        siblings = findSiblings(parents, people, person.id)
+    }
+    if (siblings.length === 0) {
+        siblingNames = "None Found"
+    } else {
+        for (let sibling of siblings){
+            siblingNames += "\n" + sibling.firstName + " " + sibling.lastName
+        }
+    }
+    
+   
+    console.log(`
+    Spouse: ${spouseName}   
+    Parents: ${parentNames}
+    Siblings: ${siblingNames}`)
+}
+
+function findSiblings(parentsArr, people, ignoreId) {
+    let foundSibling = people.filter(function (person) {
+        for (parent of parentsArr) {
+            if (person.parents.includes(parent.id)) {
+                if (person.id === ignoreId) {
+                    continue
+                }
+                return true;
+            }
+        } 
+    });
+    return foundSibling
+    
 }

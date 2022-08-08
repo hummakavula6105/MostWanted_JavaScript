@@ -292,5 +292,84 @@ const data = [
 		"occupation": "doctor",
 		"parents": [313207561, 313997561],
 		"currentSpouse": null
+	},
+	{
+		"id": 99999999,
+		"firstName": "Alex",
+		"lastName": "Howard",
+		"gender": "male",
+		"dob": "2/02/1987",
+		"height": 67,
+		"weight": 500,
+		"eyeColor": "brown",
+		"occupation": "doctor",
+		"parents": [99999997, 99999996],
+		"currentSpouse": 99999998
+	},
+	{
+		"id": 99999998,
+		"firstName": "Lena",
+		"lastName": "Ziegler",
+		"gender": "female",
+		"dob": "2/02/1987",
+		"height": 67,
+		"weight": 500,
+		"eyeColor": "brown",
+		"occupation": "doctor",
+		"parents": [],
+		"currentSpouse": 99999999
+	},
+	{
+		"id": 99999997,
+		"firstName": "Frank",
+		"lastName": "Howard",
+		"gender": "male",
+		"dob": "2/02/1987",
+		"height": 67,
+		"weight": 500,
+		"eyeColor": "brown",
+		"occupation": "doctor",
+		"parents": [],
+		"currentSpouse": 99999996
+	},
+	{
+		"id": 99999996,
+		"firstName": "Angela",
+		"lastName": "Young",
+		"gender": "female",
+		"dob": "2/02/1987",
+		"height": 67,
+		"weight": 500,
+		"eyeColor": "brown",
+		"occupation": "doctor",
+		"parents": [],
+		"currentSpouse": 99999997 
+	},
+	{
+		"id": 99999995,
+		"firstName": "Tony",
+		"lastName": "Howard",
+		"gender": "male",
+		"dob": "2/02/1987",
+		"height": 67,
+		"weight": 500,
+		"eyeColor": "brown",
+		"occupation": "doctor",
+		"parents": [99999997],
+		"currentSpouse": null 
+	},
+	{
+		"id": 99999994,
+		"firstName": "Harry",
+		"lastName": "Howard",
+		"gender": "male",
+		"dob": "2/02/1987",
+		"height": 67,
+		"weight": 500,
+		"eyeColor": "brown",
+		"occupation": "doctor",
+		"parents": [99999997],
+		"currentSpouse": null 
 	}
+
 ];
