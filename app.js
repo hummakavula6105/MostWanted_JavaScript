@@ -283,3 +283,18 @@ function findPersonDescendants(person, people)
         }
     }
     console.log(`Descendants: ${descendantsNames}`)
+
+    // let descendantIDs = []
+    // function findPersonDescendants(person, people) {
+    //     let id = person.id;
+        
+    
+    //     people.filter(function (perp) {
+    //         if (perp.parents.includes(id)) {
+    //             descendantIDs.push(perp.id)
+    //             return findPersonDescendants(perp, people);   
+    //             }
+    //     })
+        
+    //     return descendantIDs;
+    }
