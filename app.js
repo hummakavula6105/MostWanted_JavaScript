@@ -266,3 +266,20 @@ function findSiblings(parentsArr, people, ignoreId) {
     return foundSibling
     
 }
+
+function findPersonDescendants(person, people)
+
+    let descendants = [];
+    let descendantsNames = "";
+
+    if (person.parents > 3) {
+        descendants = findDescendants(person.id)
+    if (descendants.length === 0) {
+        descendantNames = "None Found"
+    } else {
+            for (let descendant of descendants){
+                descendantNames += "\n" + descendant.firstName + " " + descendant.lastName
+            }
+        }
+    }
+    console.log(`Descendants: ${descendantsNames}`)
